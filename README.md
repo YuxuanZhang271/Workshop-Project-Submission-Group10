@@ -24,11 +24,11 @@ By analyzing a user's historical data (such as task completion rates, time usage
 
 The system's intelligence is driven by a two-part reasoning engine:
 
-🧠 Task Evaluation Model: A neural network that predicts the expected energy, pressure, and completion quality for any given task. It uses Historical Impact Weights (HIW) to learn from a user's past performance, ensuring its recommendations improve over time.
+**🧠 Task Evaluation Model**: A neural network that predicts the expected energy, pressure, and completion quality for any given task. It uses Historical Impact Weights (HIW) to learn from a user's past performance, ensuring its recommendations improve over time.
 
-📅 Scheduler: A rule-based reasoning system that transforms the prioritized task list into a feasible and adaptive timetable. It intelligently handles fixed and flexible tasks, using a progressive fitting strategy and priority-based swapping to manage conflicts. A key feature is its ability to optimize the length and placement of rest periods to maximize user energy recovery.
+**📅 Scheduler**: A rule-based reasoning system that transforms the prioritized task list into a feasible and adaptive timetable. It intelligently handles fixed and flexible tasks, using a progressive fitting strategy and priority-based swapping to manage conflicts. A key feature is its ability to optimize the length and placement of rest periods to maximize user energy recovery.
 
-The front-end includes a weekly timetable, daily & weekly report📊, and an AI chatbot💬 which leverages an LLM to understand natural language and automatically create tasks, creating a seamless user experience. This project is designed for students and knowledge workers who need to balance complex schedules with a sustainable, healthy routine.
+The front-end includes a **weekly timetable**, **daily & weekly report📊**, and an **AI chatbot💬** which leverages an LLM to understand natural language and automatically create tasks, creating a seamless user experience. This project is designed for students and knowledge workers who need to balance complex schedules with a sustainable, healthy routine.
 
 
 
