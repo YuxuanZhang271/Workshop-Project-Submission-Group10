@@ -14,13 +14,11 @@
 
 ## **SECTION 2: EXECUTIVE SUMMARY**
 
-**🚀 Executive Summary**
-
 The AI-powered Scheduling System is a smart personal assistant built to address the failures of traditional, static scheduling tools. Where most calendars fail to adapt to a user's dynamic energy levels, stress, and changing priorities, this project provides a human-centered solution that optimizes for both productivity and well-being.
 
 By analyzing a user's historical data (such as task completion rates, time usage, and self-reported stress/energy levels), the system generates personalized and adaptive schedules designed to reduce decision fatigue and prevent burnout.
 
-**Core Technical Features**
+**🚀Core Technical Features**
 
 The system's intelligence is driven by a two-part reasoning engine:
 
