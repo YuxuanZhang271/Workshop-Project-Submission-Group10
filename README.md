@@ -42,11 +42,11 @@ The front-end includes a **weekly timetable**, **daily & weekly report📊**, an
 
 
 
-## **SECTION 4: VIDEO OF SYSTEM MODELLING & USE CASE DEMO**
+## **SECTION 4: VIDEO OF SYSTEM & USE CASE DEMO**
 
-`Refer to Video/Intelligent_Reasoning_Systems-2025_09_24-AIS07FT-Group10-AI_Powered_Scheduling_System.mp4`
+`Refer to Video/Intelligent_Reasoning_Systems-2025_09-AIS07FT-Group10-AI_Powered_Scheduling_System.mp4`
 
-xxx
+xxx also youtube link
 
 
 
