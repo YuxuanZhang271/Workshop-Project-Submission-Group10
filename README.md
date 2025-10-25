@@ -54,6 +54,11 @@ xxx also youtube link
 
 For some issues you may have, and more explicit introduction, please refer to `ProjectReport/User_Guide.pdf`
 
+```
+./ % cd SystemCode
+./SystemCode % git clone https://github.com/YuxuanZhang271/AI-Scheduling-System.git
+```
+
 ### Start Backend
     
 ```
@@ -75,10 +80,27 @@ For some issues you may have, and more explicit introduction, please refer to `P
 
 ## **SECTION 6: PROJECT REPORT / PAPER**
 
-Refer to `ProjectReport/`
+Refer to `ProjectReport/Project_Report.pdf`
 
-xxx
+Content of the report: 
 
+1 Executive Summary <br>
+2 Problem Description <br>
+3 Solutions <br>
+&emsp;&emsp; 3.1 Task Evaluation Model <br>
+&emsp;&emsp;&emsp;&emsp; 3.1.1 Data Preparation <br>
+&emsp;&emsp;&emsp;&emsp; 3.1.2 Feature Engineering <br>
+&emsp;&emsp;&emsp;&emsp; 3.1.3 Model Training and Evaluation <br>
+&emsp;&emsp;&emsp;&emsp; 3.1.4 Task Scoring and Application <br>
+&emsp;&emsp; 3.2 Scheduler <br>
+&emsp;&emsp;&emsp;&emsp; 3.2.1 Core Architecture and Logic <br>
+&emsp;&emsp;&emsp;&emsp; 3.2.2 Rest Time Distribution <br>
+&emsp;&emsp;&emsp;&emsp; 3.2.3 Historical Impact Integration <br>
+&emsp;&emsp;&emsp;&emsp; 3.2.4 Computational Efficiency <br>
+&emsp;&emsp; 3.3 System Development <br>
+&emsp;&emsp;&emsp;&emsp; 3.3.1 Database <br>
+&emsp;&emsp;&emsp;&emsp; 3.3.2 Backend <br>
+&emsp;&emsp;&emsp;&emsp; 3.3.3 Frontend (System Introduction) <br>
 
 
 <hr>
