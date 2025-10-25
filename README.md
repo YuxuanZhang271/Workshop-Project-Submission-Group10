@@ -8,7 +8,7 @@
 
 ### **AI-Powered Scheduling System**
 
-<img src="images\cover.png" alt="Cover">
+<img src="ProjectReport/Project_Report LaTeX/Images/System/cover.png" alt="Cover">
 
 
 
@@ -44,7 +44,7 @@ The front-end includes a **weekly timetable**, **daily & weekly report📊**, an
 
 ## **SECTION 4: VIDEO OF SYSTEM & USE CASE DEMO**
 
-`Refer to Video/Intelligent_Reasoning_Systems-2025_09-AIS07FT-Group10-AI_Powered_Scheduling_System.mp4`
+Refer to `Video/Intelligent_Reasoning_Systems-2025_09-AIS07FT-Group10-AI_Powered_Scheduling_System.mp4`
 
 xxx also youtube link
 
@@ -52,20 +52,35 @@ xxx also youtube link
 
 ## **SECTION 5: USER GUIDE**
 
-`Refer to ProjectReport/User_Guide.pdf`
+For some issues you may have, and more explicit introduction, please refer to `ProjectReport/User_Guide.pdf`
 
-xxx
+### Start Backend
+    
+```
+(base) ./ % cd SystemCode/backend 
+(base) ./SystemCode/backend % conda create -n env python=3.10 
+(base) ./SystemCode/backend % conda activate env 
+(env) ./SystemCode/backend % pip install -r requirement.txt 
+(env) ./SystemCode/backend % uvicorn main:app --reload
+```
+    
+### Start Frontend
+        
+```
+./ % cd SystemCode/frontend 
+./SystemCode/frontend % npm start
+```
 
 
 
 ## **SECTION 6: PROJECT REPORT / PAPER**
 
-`Refer to Github Folder: Miscellaneous`
+Refer to `ProjectReport/`
 
 xxx
 
 
 
-## **SECTION 7: MISCELLANEOUS**
-
-Data Source: `Miscellaneous/Original_Data/`
+<hr>
+<img src="ProjectReport/Project_Report LaTeX/Images/Logos/nus.png" alt="Cover">
+<img src="ProjectReport/Project_Report LaTeX/Images/Logos/iss.png" alt="Cover">
