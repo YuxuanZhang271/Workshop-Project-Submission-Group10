@@ -54,11 +54,6 @@ xxx also youtube link
 
 For some issues you may have, and more explicit introduction, please refer to `ProjectReport/User_Guide.pdf`
 
-```
-./ % cd SystemCode
-./SystemCode % git clone https://github.com/YuxuanZhang271/AI-Scheduling-System.git
-```
-
 ### Start Backend
     
 ```

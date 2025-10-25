@@ -1,0 +1,4 @@
+[submodule "SystemCode"]
+	path = SystemCode
+	url = https://github.com/YuxuanZhang271/AI-Scheduling-System.git
+	branch = frontend/login-task-chatbot
