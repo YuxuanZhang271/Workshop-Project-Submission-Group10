@@ -48,7 +48,7 @@ Refer to `ProjectReport/Individual_Contribution.pdf`
 
 Refer to `Video/Intelligent_Reasoning_Systems-2025_09-AIS07FT-Group10-AI_Powered_Scheduling_System.mp4`
 
-xxx also youtube link
+[ Full Demo Video ](https://youtu.be/1vLSfvlffZw)
 
 
 
