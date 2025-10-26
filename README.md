@@ -32,6 +32,8 @@ The front-end includes a **weekly timetable**, **daily & weekly report📊**, an
 
 ## **SECTION 3: PROJECT CONTRIBUTION**
 
+Refer to `contribution.xlsx`
+
 | Name         | Student ID | Work Items | Email              |
 |--------------|------------|------------|--------------------|
 | Jin Keyi     | A0276819L  | xxx | e1133134@u.nus.edu |
@@ -79,7 +81,7 @@ For some issues you may have, and more explicit introduction, please refer to `P
 
 Refer to `ProjectReport/Project_Report.pdf`
 
-Content of the report: 
+**Content** of the report: 
 
 1 Executive Summary <br>
 2 Problem Description <br>
@@ -98,6 +100,8 @@ Content of the report:
 &emsp;&emsp;&emsp;&emsp; 3.3.1 Database <br>
 &emsp;&emsp;&emsp;&emsp; 3.3.2 Backend <br>
 &emsp;&emsp;&emsp;&emsp; 3.3.3 Frontend (System Introduction) <br>
+
+<img src="/ProjectReport/Project_Report LaTeX/Images/System/ai_scheduling/aft_scheduling.jpeg" alt="Dashboard">
 
 
 <hr>
