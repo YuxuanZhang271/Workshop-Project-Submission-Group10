@@ -1,6 +1,6 @@
 ﻿### [ Practice Module ] Project Submission: Group 10
 
-**[ Project Naming ]** Intelligent_Reasoning_Systems-2025_09_24-AIS07FT-Group10-AI_Powered_Scheduling_System
+**[ Intelligent_Reasoning_Systems-2025_09_24-AIS07FT-Group10-AI_Powered_Scheduling_System ]** 
 
 
 
