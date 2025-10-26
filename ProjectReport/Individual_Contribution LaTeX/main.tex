@@ -1,0 +1,194 @@
+%--------------------
+% Packages
+% -------------------
+\documentclass[12pt, a4paper]{article}
+\usepackage[a4paper, margin=1.0in]{geometry}
+\usepackage{CormorantGaramond}
+\linespread{1.1}
+\usepackage{graphicx}
+\usepackage[hidelinks]{hyperref}
+\usepackage{booktabs}
+
+\usepackage{indentfirst}
+\setlength{\parskip}{0.8em}
+
+\usepackage{enumitem}
+\setlist{topsep=0em, itemsep=0em, parsep=0.8em, partopsep=0em}
+
+\usepackage{tocloft}
+\setlength{\cftbeforesecskip}{0.8em}
+
+\usepackage[most]{tcolorbox}
+\usepackage{xcolor}
+\definecolor{qianhuise}{RGB}{20, 20, 20}
+\newtcolorbox{monoblock}{
+    enhanced,              % 启用高级功能
+    breakable,             % 支持多行和分页自动换行
+    colback=qianhuise,     % 背景色
+    colframe=black!30,     % 边框颜色
+    boxrule=0.5pt,         % 边框线宽
+    arc=2mm,               % 圆角
+    coltext=white, 
+    left=5pt, right=5pt, top=3pt, bottom=3pt, % 内边距
+    fontupper=\ttfamily,   % 等宽字体
+    halign=flush left,     % 左对齐（防止水平超出）
+}
+
+%-----------------------
+% Begin document
+%-----------------------
+\begin{document}
+
+%-----------------------
+% Cover
+%-----------------------
+\begin{flushright}
+    \includegraphics[height=40pt]{Images/Logos/nus.png} 
+    \vrule
+    \includegraphics[height=40pt]{Images/Logos/iss.png}
+\end{flushright}
+
+\vspace{1.0in}
+
+\begin{center}   
+    \large Master of Technology in Artificial Intelligence Systems \\
+    \Huge \MakeUppercase{\textbf{Individual Contribution}} \\
+    \Large AI-Powered Scheduling System \\
+
+    \vspace{4.0in}
+    
+    \normalsize
+    \begin{tabular}{c c c}
+        \toprule
+        & \textbf{Group 10} & \\ \midrule
+        \textbf{Name} & \textbf{Student ID} & \textbf{Email} \\ \midrule
+        Jin Keyi & e1133134@u.nus.edu & A0276819L \\ 
+        Ko Hung-Chi & e1539175@u.nus.edu & A0327344E \\ 
+        Sun Yuchen & e1538079@u.nus.edu & A0326248B \\ 
+        Zhang Yuxuan & e1216649@u.nus.edu & A0285664N \\
+        Zhao Jiahui & e1554179@u.nus.edu & A0329852U \\ \bottomrule
+    \end{tabular}
+\end{center}
+
+\newpage
+
+\tableofcontents
+
+\newpage
+
+\section{Jin Keyi} 
+
+    \begin{enumerate}
+        \item \textbf{Matriculation No.}: A0276819L
+        \item \textbf{Email}: e1133134@u.nus.edu
+        \item \textbf{Contributions}
+
+            \begin{itemize}
+                \item During the system design phase, resolved several scheduler rule–related issues, ensuring logical consistency and robustness in the scheduling mechanism.
+                \item Developed the backend architecture, established MongoDB connections, and implemented core functionalities including user and task management with credential verification.
+                \item Designed and trained the Task Evaluation Model, experimenting with multiple machine learning algorithms to enhance prediction accuracy.
+                \item Handled data preprocessing and feature engineering to ensure high-quality model input and optimal system performance.
+            \end{itemize}
+        
+        \item \textbf{Self-Reflection}
+        
+            Through this project, I deepened my understanding of backend development and machine learning integration. I learned how to balance system design efficiency with model performance and gained valuable experience in handling real-world data and improving model accuracy through iterative experimentation and optimization.
+    \end{enumerate}
+
+
+    
+\section{Ko Hung-Chi} 
+
+    \begin{enumerate}
+        \item \textbf{Matriculation No.}: A0327344E
+        \item \textbf{Email}: e1539175@u.nus.edu
+        \item \textbf{Contributions}
+
+            \begin{itemize}
+                \item \textbf{UI Design}: Designed the complete user interface for the scheduling system, defining the visual layout, user workflow, and interaction elements.
+                \item \textbf{Frontend Development}: Co-developed the frontend code, translating the UI designs into a functional, interactive application for users.
+                \item \textbf{Backend Integration}: Helped integration of frontend to the backend, enabling data flow between the user interface.
+                \item \textbf{Chatbot Prompt Engineering}: Handled prompt engineering for the AI chatbot, structuring queries to accurately extract task parameters from natural language inputs.
+                \item \textbf{Video Production}: Edited the final project demonstration video, compiling footage to effectively showcase the system's features and overall functionality.
+            \end{itemize}
+        
+        \item \textbf{Self-Reflection}
+        
+            As my undergraduate background isn’t in this discipline, this project presented a learning curve. The work required close collaboration to connect the frontend with the backend. In UI design and frontend development, I learned how the data flow works real-time, ensuring the interface could correctly send user inputs to the backend and display the generated schedule. Integrating the AI components was also a challenge. Through prompt engineering, I learned how to structure prompt for the LLM and how that data was subsequently fed into the scheduler. This project provided understanding of applying predictive models and LLMs in intelligent system.
+    \end{enumerate}
+
+    
+
+\section{Sun Yuchen} 
+
+    \begin{enumerate}
+        \item \textbf{Matriculation No.}: A0326248B
+        \item \textbf{Email}: e1538079@u.nus.edu
+        \item \textbf{Contributions}
+
+            \begin{itemize}
+                \item Responsible for frontend page design and implementation, ensuring a smooth and intuitive user interface for task creation, editing, and visualization.
+                \item Managed frontend–backend integration with a FastAPI-based backend to enable real-time task updates and synchronization.
+                \item Participated in model training for the Task Evaluation Module.
+                \item Modified parts of the backend logic for task scheduling and the AI chatbot.
+                \item Ensured consistent communication and data flow between different system modules.
+                \item Contributed to project documentation, including writing and revising key sections of the final report.
+            \end{itemize}
+        
+        \item \textbf{Self-Reflection}
+        
+            Through this project, I gained comprehensive experience in full-stack development and the integration of AI models into practical applications. Working on both frontend and part of backend components enhanced my understanding of system architecture, API design, and model deployment. I also learned to manage version control and collaborate efficiently within a multi-member team. The process of debugging cross-module interactions and optimizing model performance improved my problem-solving skills. Overall, this project strengthened my technical depth and teamwork abilities, reinforcing my interest in building intelligent, human-centered AI systems.
+    \end{enumerate}
+
+    
+
+\section{Zhang Yuxuan} 
+
+    \begin{enumerate}
+        \item \textbf{Matriculation No.}: A0285664N
+        \item \textbf{Email}: e1216649@u.nus.edu
+        \item \textbf{Contributions}
+
+            \begin{itemize}
+                \item Served as Team Leader, coordinating overall project progress and team collaboration.
+                \item Proposed the AI-empowered architecture integrating Task Evaluation Model and Scheduler during the system design stage.
+                \item Designed and improved the Task Evaluation Model (model selection, training methods) and enhanced the Scheduler’s rule mechanism to ensure stability and efficiency.
+                \item Designed data structures and built the MongoDB database, defining user data storage and recording mechanisms.
+                \item Developed core Scheduler functionalities, including task allocation and rest-time distribution.
+                \item Contributed to backend development and led data preprocessing for model training.
+            \end{itemize}
+        
+        \item \textbf{Self-Reflection}
+
+            Through this project, I strengthened my leadership, system design, and problem-solving abilities. As team leader, I learned to coordinate development tasks and ensure smooth collaboration. Designing the AI-empowered architecture deepened my understanding of integrating machine learning with rule-based systems. Developing the scheduler and database enhanced my backend engineering and algorithm design skills. Handling data preprocessing and model training improved my analytical thinking and attention to detail. Overall, this experience enriched my technical expertise and teamwork capabilities, preparing me for more complex research and system development challenges in the future.
+         
+    \end{enumerate}
+
+    
+
+\section{Zhao Jiahui} 
+
+    \begin{enumerate}
+        \item \textbf{Matriculation No.}: A0329852U
+        \item \textbf{Email}: e1554179@u.nus.edu
+        \item \textbf{Contributions}
+
+            \begin{itemize}
+                \item \textbf{Backend}: Implemented the scheduling logic for both fixed and flexible tasks, integrating AI models to predict users’ energy and pressure levels for adaptive and intelligent task arrangement.
+                \item \textbf{Frontend}: Designed and developed the core interfaces — including the Dashboard, Task Board, Reports, and Energy/Pressure Panel — featuring real-time data visualization and seamless API integration for smooth user interaction.
+            \end{itemize}
+        
+        \item \textbf{Self-Reflection}
+
+            This project provided me with a comprehensive understanding of how AI can be applied to intelligent scheduling and personal productivity systems. I learned how to connect models with real-time decision-making algorithms and how to design a system that is both technically efficient and user-friendly. Working on both backend logic and frontend interfaces strengthened my full-stack development skills, as well as my ability to integrate models, databases, and APIs seamlessly.
+            
+            I also gained valuable experience in collaborative development, code versioning, and testing. Overall, this project greatly improved my technical, analytical, and problem-solving abilities, and further inspired my passion for developing intelligent systems.
+            
+    \end{enumerate}
+
+    
+
+\end{document}
+%-----------------------
+% End document
+%-----------------------
