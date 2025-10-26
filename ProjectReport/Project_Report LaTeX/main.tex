@@ -195,56 +195,63 @@
     
             Additional derived labels include:
             \begin{itemize}
-                \item \textbf{energy\_loss} — difference in Energy between task end and start,
-                \item \textbf{pressure\_increase} — difference in Pressure between task end and start.
+                \item \textbf{energy\_loss}: difference in Energy between task end and start,
+                \item \textbf{pressure\_increase}: difference in Pressure between task end and start.
             \end{itemize}
     
         \subsubsection{Model Training and Evaluation}
     
-            Two independent regression models are trained to predict Energy Loss and Pressure Increase respectively. Both use the same input features \texttt{[type, difficulty, duration]}.
-    
-            \paragraph{Model Choice.}
-            A \textbf{Random Forest Regressor} is adopted for both targets due to its robustness to noise and missing data, nonlinear feature interaction handling, and interpretability through feature importance analysis.
-    
-            \paragraph{Training Process.}
+            Two independent regression models are trained to predict Energy Loss and Pressure Increase respectively. Both use the same input features [\textbf{type}, \textbf{difficulty}, \textbf{duration}].
+
             \begin{enumerate}
-                \item The dataset is split 80/20 into training and test sets.
-                \item Separate models are trained for each target:
-                \begin{center}
-                    $f_E(x) \rightarrow \widehat{\Delta E}, \quad f_P(x) \rightarrow \widehat{\Delta P}$
-                \end{center}
-                \item Model performance is evaluated using:
-                \begin{itemize}
-                    \item MAE (Mean Absolute Error)
-                    \item MSE (Mean Squared Error)
-                    \item $R^2$ Score (Goodness of fit)
-                \end{itemize}
+                \item \textbf{Model Choice}
+
+                    A \textbf{Random Forest Regressor} is adopted for both targets due to its robustness to noise and missing data, nonlinear feature interaction handling, and interpretability through feature importance analysis.
+
+                \item \textbf{Training Process}
+
+                    \begin{enumerate}
+                        \item The dataset is split 80/20 into training and test sets.
+                        \item Separate models are trained for each target:
+                        
+                            \begin{center}
+                                $f_E(x) \rightarrow \widehat{\Delta E}, \quad f_P(x) \rightarrow \widehat{\Delta P}$
+                            \end{center}
+                        
+                        \item Model performance is evaluated using:
+                        
+                            \begin{itemize}
+                                \item MAE (Mean Absolute Error)
+                                \item MSE (Mean Squared Error)
+                                \item $R^2$ Score (Goodness of fit)
+                            \end{itemize}
+                    \end{enumerate}
+
+                \item \textbf{Evaluation Output}
+
+                    === Energy Loss Prediction === \\
+                    MAE: 0.6154976455054124 \\
+                    MSE: 0.7161091879304533 \\
+                    R²: 0.05477522739025942 
+            
+                    === Pressure Increase Prediction === \\
+                    MAE: 0.6326830109599901 \\
+                    MSE: 0.7067960090389993 \\
+                    R²: -0.13040842378934858 \\
+                    
             \end{enumerate}
     
-            Evaluation output:
-    
-            \begin{verbatim}
-            === Energy Loss Prediction ===
-            MAE: 0.6154976455054124
-            MSE: 0.7161091879304533
-            R²: 0.05477522739025942
-    
-            === Pressure Increase Prediction ===
-            MAE: 0.6326830109599901
-            MSE: 0.7067960090389993
-            R²: -0.13040842378934858
-            \end{verbatim}
-    
-            Both models are then persisted as serialized \texttt{.pkl} files using \texttt{joblib}:
+            Both models are then persisted as serialized \textbf{.pkl} files using \textbf{joblib}: 
+            
             \begin{itemize}
-                \item \texttt{energy\_loss\_model.pkl}
-                \item \texttt{pressure\_increase\_model.pkl}
-                \item \texttt{task\_label\_encoder.pkl}
+                \item \textbf{energy\_loss\_model.pkl}
+                \item \textbf{pressure\_increase\_model.pkl}
+                \item \textbf{task\_label\_encoder.pkl}
             \end{itemize}
     
         \subsubsection{Task Scoring and Application}
     
-            Once trained, the model is applied to new or upcoming tasks (from \texttt{new\_tasks\_df.csv}) to predict:
+            Once trained, the model is applied to new or upcoming tasks (from \textbf{new\_tasks\_df.csv}) to predict:
     
             \begin{center}
                 $\text{Predicted Load} = \{\widehat{\Delta E}, \widehat{\Delta P}\}$
@@ -264,7 +271,7 @@
     
         The \textbf{Scheduler} is the central reasoning engine of the AI-powered Scheduling System. Its main objective is to transform a collection of user tasks—both fixed and flexible—into a feasible, adaptive, and optimized timetable that balances productivity with well-being. It embodies the system’s intelligent reasoning capability, enabling real-time adaptation to user behavior, task constraints, and time availability. 
         
-        The design of the Scheduler integrates \textbf{rule-based logic}, \textbf{heuristic optimization}, and \textbf{data-driven evaluation}. It not only arranges tasks efficiently but also ensures the user receives adequate rest, minimizing cognitive fatigue and maintaining consistent performance throughout the day. The workflow of the scheduler is shown in Figure \ref{scheduler}. 
+        The design of the Scheduler integrates \textbf{rule-based logic}, \textbf{heuristic optimization}, and \textbf{data-driven evaluation}. It not only arranges tasks efficiently but also ensures the user receives adequate rest, minimizing cognitive fatigue and maintaining consistent performance throughout the day. The workflow of the scheduler is shown in Figure~\ref{scheduler}. 
 
         \begin{figure}[H]
             \centering
@@ -381,12 +388,12 @@
             
             Overall, the backend serves as the system’s computational and integration core. It coordinates user input, AI reasoning, and data persistence, forming the foundation of the adaptive and intelligent scheduling experience provided by the platform.
         
-        \subsubsection{Frontend (System Introduction)}
+        \subsubsection{Frontend (System Presentation)}
         
             \begin{enumerate}
                 \item \textbf{Login}
                 
-                    At the login page, users should type in their username and password, then click the "Sign in" button to login. The system will check if the username and password is correct, if correct, the system will redirect the page to the main timetable, as shown in Figure \ref{login_correct}, otherwise it will show the problem to the user, as shown in Figure \ref{login_wrong_username} \& \ref{login_wrong_password}. 
+                    At the login page, users should type in their username and password, then click the "Sign in" button to login. The system will check if the username and password is correct, if correct, the system will redirect the page to the main timetable, as shown in Figure~\ref{login_correct}, otherwise it will show the problem to the user, as shown in Figure~\ref{login_wrong_username} \& Figure~\ref{login_wrong_password}. 
                     
                     \begin{figure}[H]
                         \centering
@@ -413,7 +420,7 @@
             
                 \item \textbf{Timetable} 
 
-                    After signing in, the first view is the timetable, as Figure \ref{timetable}, which will list all the registered tasks in it. As show in Figure \ref{add} to \ref{aft_delete}, clicking on the white space, the users can add new tasks, clicking on the task block, the users can edit the tasks and even delete them. 
+                    After signing in, the first view is the timetable, as Figure~\ref{timetable}, which will list all the registered tasks in it. As show in Figure~\ref{add} to Figure~\ref{aft_delete}, clicking on the white space, the users can add new tasks, clicking on the task block, the users can edit the tasks and even delete them. 
 
                     \begin{figure}[H]
                         \centering
@@ -488,21 +495,75 @@
 
                 \item \textbf{AI Scheduling}
 
-                    xxx
+                    In the Timetable and Today’s Tasks pages, users can add \textbf{flexible tasks} (Figure~\ref{add_flex}) and delegate scheduling to the system. Upon submission, the pretrained evaluation model (see \textbf{Task Evaluation Model}) estimates each task’s energy and pressure costs. When the user clicks \emph{Run Intelligent Scheduling}, the scheduler allocates all flexible tasks to feasible time slots subject to constraints (e.g., working hours, existing commitments, and rest buffers). Upon success, a confirmation dialog 
+
+                    \begin{quote}
+                        \textit{“Intelligent scheduling executed! ”}
+                    \end{quote}
+                    
+                    is displayed (Figure~\ref{sch_succ}). The resulting plan appears on the Today’s Tasks page (Figure~\ref{aft_sch_todaytask}) and in the weekly overview on the Dashboard (Figure~\ref{aft_scheduling}). The AI-scheduling workflow is summarized below.
+                    
+                    \begin{itemize}
+                        \item User submits one or more flexible tasks.
+                        \item The evaluation model predicts energy and pressure costs for each task.
+                        \item The scheduler formulates a constrained allocation problem over available time slots.
+                        \item A solver assigns tasks, inserts rest buffers, and resolves conflicts by priority/difficulty.
+                        \item On success, the plan is committed and surfaced to the UI; otherwise, the user is prompted to revise inputs.
+                    \end{itemize}
+
+
+                    \begin{figure}[H]
+                        \centering
+                        \includegraphics[width=\textwidth]{Images/System/ai_scheduling/add_flex.png}
+                        \caption{Add Flexible Tasks}
+                        \label{add_flex}
+                    \end{figure}
+
+                    \begin{figure}[H]
+                        \begin{minipage}[t]{0.49\textwidth}
+                            \centering
+                            \includegraphics[width=\textwidth]{Images/System/ai_scheduling/sch_succ.png}
+                            \caption{Prompt - Scheduling Succeed! }
+                            \label{sch_succ}
+                        \end{minipage}
+                        \hfill
+                        \begin{minipage}[t]{0.49\textwidth}
+                            \centering
+                            \includegraphics[width=\textwidth]{Images/System/ai_scheduling/aft_sch_todaytask.png}
+                            \caption{Today Tasks after AI-Scheduling}
+                            \label{aft_sch_todaytask}
+                        \end{minipage}
+                    \end{figure}
+
+                    \begin{figure}[H]
+                        \begin{minipage}[t]{0.49\textwidth}
+                            \centering
+                            \includegraphics[width=\textwidth]{Images/System/ai_scheduling/bf_scheduling.JPG}
+                            \caption{Timetable before AI-Scheduling}
+                            \label{bf_scheduling}
+                        \end{minipage}
+                        \hfill
+                        \begin{minipage}[t]{0.49\textwidth}
+                            \centering
+                            \includegraphics[width=\textwidth]{Images/System/ai_scheduling/aft_scheduling.jpeg}
+                            \caption{Timetable after AI-Scheduling}
+                            \label{aft_scheduling}
+                        \end{minipage}
+                    \end{figure}
 
                 \item \textbf{Intelligent Report}
                                 
-                    The \textbf{Intelligent Report} module provides an analytical visualization of the user’s daily and weekly performance, bridging the reasoning engine with interpretable insights. It is designed not only to display completed tasks and statistics but also to reflect patterns in user behavior, energy consumption, and psychological pressure trends over time. By combining data analytics and adaptive visualization, this component transforms raw scheduling data into actionable self-awareness.
+                    The \textbf{Intelligent Report} module provides an analytical visualization of the user’s daily and weekly performance, bridging the reasoning engine with interpretable insights. It is designed not only to display completed tasks and statistics but also to reflect patterns in user behavior, energy consumption, and psychological pressure trends over time. By combining data analytics and adaptive visualization, this component transforms raw scheduling data into actionable self-awareness. 
     
                     \begin{itemize}
                         \item \textbf{Daily Report}
     
-                            As shown in Figure \ref{daily_report}, the daily report panel presents an overview of the user's performance on a specific day. It consists of three main sections:
+                            As shown in Figure~\ref{daily_report}, the daily report panel presents an overview of the user's performance on a specific day. It consists of three main sections:
                         
                             \begin{enumerate}
-                                \item \textbf{Task Status Summary} — Displays total number of tasks, number of completed ones, and the completion rate. This section offers a quantitative reflection of user productivity.
-                                \item \textbf{Task Type Distribution} — A pie chart categorizing tasks into work, food, rest and fun. This distribution helps the user identify whether their schedule maintains a healthy balance between professional and leisure activities.
-                                \item \textbf{Energy \& Pressure Trends} — Line charts that visualize predicted energy and stress levels throughout the day. These curves are derived from the AI Task Evaluation Model, showing how task arrangement impacts the user’s well-being.
+                                \item \textbf{Task Status Summary}: Displays total number of tasks, number of completed ones, and the completion rate. This section offers a quantitative reflection of user productivity.
+                                \item \textbf{Task Type Distribution}: A pie chart categorizing tasks into work, food, rest and fun. This distribution helps the user identify whether their schedule maintains a healthy balance between professional and leisure activities.
+                                \item \textbf{Energy \& Pressure Trends}: Line charts that visualize predicted energy and stress levels throughout the day. These curves are derived from the AI Task Evaluation Model, showing how task arrangement impacts the user’s well-being.
                             \end{enumerate}
             
                             \begin{figure}[H]
@@ -514,7 +575,7 @@
     
                         \item \textbf{Weekly Report}
     
-                            The weekly report (Figure \ref{weekly_report1}) provides a longitudinal view of performance over seven days, summarizing total task counts, completion ratios, and changes in energy-pressure patterns. Key features include:
+                            The weekly report (Figure~\ref{weekly_report1}) provides a longitudinal view of performance over seven days, summarizing total task counts, completion ratios, and changes in energy-pressure patterns. Key features include:
                             
                             \begin{enumerate}
                                 \item \textbf{Weekly Summary}: Summarizes the total number of tasks and completion rate across the week.
@@ -552,7 +613,7 @@
                     \begin{itemize}
                         \item \textbf{Natural Language Input}  
 
-                            As shown in Figure \ref{ai}, users can simply type a message such as:
+                            As shown in Figure~\ref{ai}, users can simply type a message such as:
                             
                             \begin{quote}
                                 \textit{“Group meeting, 2025/10/25 at 10pm, 30 minutes, work.”}
@@ -602,7 +663,7 @@
                         \item \textbf{Integration with Scheduler}  
                         
                             After task creation, the system instantly synchronizes with the intelligent scheduling engine.  
-                            Figures \ref{bf_ai} and \ref{aft_ai} illustrate the dynamic scheduling process: the left figure shows the timetable \textbf{before} adding the new task, while the right one shows the \textbf{updated schedule after} the chatbot’s AI-driven assignment.  
+                            Figure~\ref{bf_ai} and Figure~\ref{aft_ai} illustrate the dynamic scheduling process: the left figure shows the timetable \textbf{before} adding the new task, while the right one shows the \textbf{updated schedule after} the chatbot’s AI-driven assignment.  
                             The scheduler automatically re-evaluates available windows and integrates the new task into an optimized time slot—without requiring manual refresh or adjustment.
                         
                         \item \textbf{User Experience and Significance}  

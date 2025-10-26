@@ -71,6 +71,8 @@ For some issues you may have, and more explicit introduction, please refer to `P
 ./SystemCode/frontend % npm start
 ```
 
+⚠️ **If you get any issues when setting up the environment, please refer to the *Troubleshooting* part in *User Guide*.**
+
 
 
 ## **SECTION 6: PROJECT REPORT / PAPER**

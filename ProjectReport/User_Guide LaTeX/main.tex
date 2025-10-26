@@ -1,0 +1,369 @@
+%--------------------
+% Packages
+% -------------------
+\documentclass[12pt, a4paper]{article}
+\usepackage[a4paper, margin=1.0in]{geometry}
+\usepackage{CormorantGaramond}
+\linespread{1.1}
+\usepackage{graphicx}
+\usepackage[hidelinks]{hyperref}
+\usepackage{booktabs}
+
+\usepackage{indentfirst}
+\setlength{\parskip}{0.8em}
+
+\usepackage{enumitem}
+\setlist{topsep=0em, itemsep=0em, parsep=0.8em, partopsep=0em}
+
+\usepackage{tocloft}
+\setlength{\cftbeforesecskip}{0.8em}
+
+\usepackage[most]{tcolorbox}
+\usepackage{xcolor}
+\definecolor{qianhuise}{RGB}{20, 20, 20}
+\newtcolorbox{monoblock}{
+    enhanced,              % 启用高级功能
+    breakable,             % 支持多行和分页自动换行
+    colback=qianhuise,     % 背景色
+    colframe=black!30,     % 边框颜色
+    boxrule=0.5pt,         % 边框线宽
+    arc=2mm,               % 圆角
+    coltext=white, 
+    left=5pt, right=5pt, top=3pt, bottom=3pt, % 内边距
+    fontupper=\ttfamily,   % 等宽字体
+    halign=flush left,     % 左对齐（防止水平超出）
+}
+
+%-----------------------
+% Begin document
+%-----------------------
+\begin{document}
+
+%-----------------------
+% Cover
+%-----------------------
+\begin{flushright}
+    \includegraphics[height=40pt]{Images/Logos/nus.png} 
+    \vrule
+    \includegraphics[height=40pt]{Images/Logos/iss.png}
+\end{flushright}
+
+\vspace{1.0in}
+
+\begin{center}   
+    \large Master of Technology in Artificial Intelligence Systems \\
+    \Huge \MakeUppercase{\textbf{User Guide}} \\
+    \Large AI-Powered Scheduling System \\
+
+    \vspace{4.0in}
+    
+    \normalsize
+    \begin{tabular}{c c c}
+        \toprule
+        & \textbf{Group 10} & \\ \midrule
+        \textbf{Name} & \textbf{Student ID} & \textbf{Email} \\ \midrule
+        Jin Keyi & e1133134@u.nus.edu & A0276819L \\ 
+        Ko Hung-Chi & e1539175@u.nus.edu & A0327344E \\ 
+        Sun Yuchen & e1538079@u.nus.edu & A0326248B \\ 
+        Zhang Yuxuan & e1216649@u.nus.edu & A0285664N \\
+        Zhao Jiahui & e1554179@u.nus.edu & A0329852U \\ \bottomrule
+    \end{tabular}
+\end{center}
+
+\newpage
+
+\tableofcontents
+
+\newpage
+
+\section{Preparation} 
+
+    \subsection{Start Backend}
+    
+        \begin{monoblock}
+            \textcolor{orange}{(base) ./ \%} cd SystemCode/backend \\
+            \textcolor{orange}{(base) ./SystemCode/backend \%} conda create -n env python=3.10 \\
+            \textcolor{orange}{(base) ./SystemCode/backend \%} conda activate env \\
+            \textcolor{orange}{(env) ./SystemCode/backend \%} pip install -r requirement.txt \\
+            \textcolor{orange}{(env) ./SystemCode/backend \%} uvicorn main:app --reload
+        \end{monoblock}
+    
+    \subsection{Start Frontend}
+        
+        \begin{monoblock}
+            \textcolor{orange}{./ \%} cd SystemCode/frontend \\
+            \textcolor{orange}{./SystemCode/frontend \%} npm start
+        \end{monoblock}
+
+\section{Troubleshooting}
+
+    \subsection{issue 1: npm start problem}
+    
+        \begin{monoblock}
+            \textcolor{green}{frontend \% npm start} \\
+            
+            > ai\_scheduling\_system@0.1.0 start \\
+            > react-scripts start \\
+            
+            sh: react-scripts: command not found \\
+            
+            \textcolor{green}{frontend \% nvm install 18 --lts} \\
+            
+            v18.20.8 is already installed. \\
+            Now using node v18.20.8 (npm v10.8.2) \\
+            
+            \textcolor{green}{frontend \% nvm use 18} \\
+            
+            Now using node v18.20.8 (npm v10.8.2) \\
+            
+            \textcolor{green}{frontend \% rm -rf node\_modules package-lock.json} \\
+            
+            \textcolor{green}{frontend \% npm install react@18 react-dom@18 react-scripts@5.0.1} \\
+            
+            npm warn EBADENGINE Unsupported engine { \\
+            npm warn EBADENGINE   package: 'react-router-dom@7.9.4', \\
+            npm warn EBADENGINE   required: { node: '>=20.0.0' }, \\
+            npm warn EBADENGINE   current: { node: 'v18.20.8', npm: '10.8.2' } \\
+            npm warn EBADENGINE } \\
+            npm warn EBADENGINE Unsupported engine { \\
+            npm warn EBADENGINE   package: 'react-router@7.9.4', \\
+            npm warn EBADENGINE   required: { node: '>=20.0.0' }, \\
+            npm warn EBADENGINE   current: { node: 'v18.20.8', npm: '10.8.2' } \\
+            npm warn EBADENGINE } \\
+            npm warn deprecated inflight@1.0.6: This module is not supported, and leaks memory. Do not use it. Check out lru-cache if you want a good and tested way to coalesce async requests by a key value, which is much more comprehensive and powerful. \\
+            npm warn deprecated stable@0.1.8: Modern JS already guarantees Array\#sort() is a stable sort, so this library is deprecated. See the compatibility table on MDN: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global\_Objects/Array/sort\#browser\_compatibility \\
+            npm warn deprecated @babel/plugin-proposal-private-methods@7.18.6: This proposal has been merged to the ECMAScript standard and thus this plugin is no longer maintained. Please use @babel/plugin-transform-private-methods instead. \\
+            npm warn deprecated @babel/plugin-proposal-numeric-separator@7.18.6: This proposal has been merged to the ECMAScript standard and thus this plugin is no longer maintained. Please use @babel/plugin-transform-numeric-separator instead. \\
+            npm warn deprecated @babel/plugin-proposal-nullish-coalescing-operator@7.18.6: This proposal has been merged to the ECMAScript standard and thus this plugin is no longer maintained. Please use @babel/plugin-transform-nullish-coalescing-operator instead. \\
+            npm warn deprecated @babel/plugin-proposal-class-properties@7.18.6: This proposal has been merged to the ECMAScript standard and thus this plugin is no longer maintained. Please use @babel/plugin-transform-class-properties instead. \\
+            npm warn deprecated rollup-plugin-terser@7.0.2: This package has been deprecated and is no longer maintained. Please use @rollup/plugin-terser \\
+            npm warn deprecated @humanwhocodes/config-array@0.13.0: Use @eslint/config-array instead \\
+            npm warn deprecated abab@2.0.6: Use your platform's native atob() and btoa() methods instead \\
+            npm warn deprecated rimraf@3.0.2: Rimraf versions prior to v4 are no longer supported \\
+            npm warn deprecated @babel/plugin-proposal-optional-chaining@7.21.0: This proposal has been merged to the ECMAScript standard and thus this plugin is no longer maintained. Please use @babel/plugin-transform-optional-chaining instead. \\
+            npm warn deprecated @babel/plugin-proposal-private-property-in-object@7.21.11: This proposal has been merged to the ECMAScript standard and thus this plugin is no longer maintained. Please use @babel/plugin-transform-private-property-in-object instead. \\
+            npm warn deprecated glob@7.2.3: Glob versions prior to v9 are no longer supported \\
+            npm warn deprecated @humanwhocodes/object-schema@2.0.3: Use @eslint/object-schema instead \\
+            npm warn deprecated domexception@2.0.1: Use your platform's native DOMException instead \\
+            npm warn deprecated w3c-hr-time@1.0.2: Use your platform's native performance.now() and performance.timeOrigin. \\
+            npm warn deprecated q@1.5.1: You or someone you depend on is using Q, the JavaScript Promise library that gave JavaScript developers strong feelings about promises. They can almost certainly migrate to the native JavaScript promise now. Thank you literally everyone for joining me in this bet against the odds. Be excellent to each other. \\
+            npm warn deprecated \\
+            npm warn deprecated (For a CapTP with native promises, see @endo/eventual-send and @endo/captp) \\
+            npm warn deprecated sourcemap-codec@1.4.8: Please use @jridgewell/sourcemap-codec instead \\
+            npm warn deprecated workbox-cacheable-response@6.6.0: workbox-background-sync@6.6.0 \\
+            npm warn deprecated source-map@0.8.0-beta.0: The work that was done in this beta branch won't be included in future versions \\
+            npm warn deprecated workbox-google-analytics@6.6.0: It is not compatible with newer versions of GA starting with v4, as long as you are using GAv3 it should be ok, but the package is not longer being maintained \\
+            npm warn deprecated svgo@1.3.2: This SVGO version is no longer supported. Upgrade to v2.x.x. \\
+            npm warn deprecated eslint@8.57.1: This version is no longer supported. Please see https://eslint.org/version-support for other options. \\
+            
+            added 1388 packages, and audited 1389 packages in 32s \\
+            
+            272 packages are looking for funding \\
+              run `npm fund` for details \\
+            
+            9 vulnerabilities (3 moderate, 6 high) \\
+            
+            To address all issues (including breaking changes), run: \\
+              npm audit fix --force \\
+            
+            Run `npm audit` for details. \\
+        
+            \textcolor{green}{frontend \% npm install} \\
+            
+            npm warn EBADENGINE Unsupported engine { \\
+            npm warn EBADENGINE   package: 'react-router@7.9.4', \\
+            npm warn EBADENGINE   required: { node: '>=20.0.0' }, \\
+            npm warn EBADENGINE   current: { node: 'v18.20.8', npm: '10.8.2' } \\
+            npm warn EBADENGINE } \\
+            npm warn EBADENGINE Unsupported engine { \\
+            npm warn EBADENGINE   package: 'react-router-dom@7.9.4', \\
+            npm warn EBADENGINE   required: { node: '>=20.0.0' }, \\
+            npm warn EBADENGINE   current: { node: 'v18.20.8', npm: '10.8.2' } \\
+            npm warn EBADENGINE } \\
+            
+            added 1 package, changed 1 package, and audited 1390 packages in 2s \\
+            
+            272 packages are looking for funding \\
+              run `npm fund` for details \\
+            
+            9 vulnerabilities (3 moderate, 6 high) \\
+            
+            To address all issues (including breaking changes), run: \\
+              npm audit fix --force \\
+            
+            Run `npm audit` for details. \\
+        
+            \textcolor{green}{frontend \% npm start} \\
+            
+            > ai\_scheduling\_system@0.1.0 start \\
+            > react-scripts start \\
+            
+            (node:24675) [DEP\_WEBPACK\_DEV\_SERVER\_ON\_AFTER\_SETUP\_MIDDLEWARE] DeprecationWarning: 'onAfterSetupMiddleware' option is deprecated. Please use the 'setupMiddlewares' option.
+            (Use `node --trace-deprecation ...` to show where the warning was created) \\
+            (node:24675) [DEP\_WEBPACK\_DEV\_SERVER\_ON\_BEFORE\_SETUP\_MIDDLEWARE] DeprecationWarning: 'onBeforeSetupMiddleware' option is deprecated. Please use the 'setupMiddlewares' option.
+            Starting the development server... \\
+            
+            Compiled with warnings. \\
+            
+            ...
+        \end{monoblock}
+    
+    \subsection{issue 2: jose - print decrypt problem}
+    
+        \begin{monoblock}
+            \textcolor{green}{(env) backend \% uvicorn main:app --reload} \\
+            
+              ... \\
+              File "/.../envs/env/lib/python3.10/site-packages/jose.py", line 546 \\
+            print decrypt(deserialize\_compact(jwt), {'k':key}, \\
+            
+            SyntaxError: Missing parentheses in call to 'print'. Did you mean print(...)? \\
+        
+            \textcolor{green}{(env) backend \% pip uninstall jose} \\      
+            Found existing installation: jose 1.0.0 \\
+            Uninstalling jose-1.0.0: \\
+              Would remove: \\
+                /.../envs/env/bin/jose \\
+                /.../envs/env/lib/python3.10/site-packages/jose-1.0.0.dist-info/* \\
+                /.../envs/env/lib/python3.10/site-packages/jose.py \\
+            Proceed (Y/n)? y \\
+              Successfully uninstalled jose-1.0.0 \\
+              
+            \textcolor{green}{(env) backend \% pip install "python-jose[cryptography]"} \\
+            
+            Collecting python-jose[cryptography] \\
+              Downloading python\_jose-3.5.0-py2.py3-none-any.whl.metadata (5.5 kB) \\
+            Collecting ecdsa!=0.15 (from python-jose[cryptography]) \\
+              Downloading ecdsa-0.19.1-py2.py3-none-any.whl.metadata (29 kB) \\
+            Collecting rsa!=4.1.1,!=4.4,<5.0,>=4.0 (from python-jose[cryptography]) \\
+              Downloading rsa-4.9.1-py3-none-any.whl.metadata (5.6 kB) \\
+            Collecting pyasn1>=0.5.0 (from python-jose[cryptography]) \\
+              Downloading pyasn1-0.6.1-py3-none-any.whl.metadata (8.4 kB) \\
+            Collecting cryptography>=3.4.0 (from python-jose[cryptography]) \\
+              Downloading cryptography-46.0.3-cp38-abi3-macosx\_10\_9\_universal2.whl.metadata (5.7 kB) \\
+            Collecting cffi>=2.0.0 (from cryptography>=3.4.0->python-jose[cryptography]) \\
+              Using cached cffi-2.0.0-cp310-cp310-macosx\_11\_0\_arm64.whl.metadata (2.6 kB) \\
+            Requirement already satisfied: typing-extensions>=4.13.2 in /.../envs/env/lib/python3.10/site-packages (from cryptography>=3.4.0->python-jose[cryptography]) (4.15.0) \\
+            Collecting pycparser (from cffi>=2.0.0->cryptography>=3.4.0->python-jose[cryptography]) \\
+              Using cached pycparser-2.23-py3-none-any.whl.metadata (993 bytes) \\
+            Requirement already satisfied: six>=1.9.0 in /.../envs/env/lib/python3.10/site-packages (from ecdsa!=0.15->python-jose[cryptography]) (1.17.0) \\
+            Downloading python\_jose-3.5.0-py2.py3-none-any.whl (34 kB) \\
+            Downloading rsa-4.9.1-py3-none-any.whl (34 kB) \\
+            Downloading cryptography-46.0.3-cp38-abi3-macosx\_10\_9\_universal2.whl (7.2 MB) \\
+            7.2/7.2 MB 7.4 MB/s  0:00:01 \\
+            Using cached cffi-2.0.0-cp310-cp310-macosx\_11\_0\_arm64.whl (180 kB) \\
+            Downloading ecdsa-0.19.1-py2.py3-none-any.whl (150 kB) \\
+            Downloading pyasn1-0.6.1-py3-none-any.whl (83 kB) \\
+            Using cached pycparser-2.23-py3-none-any.whl (118 kB) \\
+            Installing collected packages: pycparser, pyasn1, ecdsa, rsa, cffi, python-jose, cryptography \\
+            Successfully installed cffi-2.0.0 cryptography-46.0.3 ecdsa-0.19.1 pyasn1-0.6.1 pycparser-2.23 python-jose-3.5.0 rsa-4.9.1 \\
+        
+            \textcolor{green}{(env) backend \% uvicorn main:app --reload} \\
+            
+            INFO:     Will watch for changes in these directories: ['/Users/yuxuanzhang/Documents/GitHub/AI-Scheduling-System/backend'] \\
+            INFO:     Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit) \\
+            INFO:     Started reloader process [8313] using StatReload \\
+            System time: 202510251311 \\
+            UTC time: 202510250511 \\
+            ML models loaded from /models directory \\
+            INFO:     Started server process [8315] \\
+            INFO:     Waiting for application startup. \\
+            INFO:     Application startup complete. \\
+        \end{monoblock}
+
+    \subsection{issue 3: login network problem}
+        \begin{monoblock}
+            INFO:     127.0.0.1:4349 - "POST /login/ HTTP/1.1" 500 Internal Server Error \\
+            ERROR:    Exception in ASGI application \\
+            Traceback (most recent call last): \\
+            pymongo.errors.ServerSelectionTimeoutError: \\
+            ac-unflmlu-shard-00-01.kjjyow6.mongodb.net:27017: timed out \\
+            (configured timeouts: socketTimeoutMS: 20000.0ms, connectTimeoutMS: 20000.0ms), \\
+            ac-unflmlu-shard-00-00.kjjyow6.mongodb.net:27017: timed out \\
+            (configured timeouts: socketTimeoutMS: 20000.0ms, connectTimeoutMS: 20000.0ms), \\
+            ac-unflmlu-shard-00-02.kjjyow6.mongodb.net:27017: timed out \\
+            (configured timeouts: socketTimeoutMS: 20000.0ms, connectTimeoutMS: 20000.0ms), \\
+            Timeout: 30s, \\
+            Topology Description: \\
+            $<$TopologyDescription id: 68fc690887003f723470fdb3, topology\_type: ReplicaSetNoPrimary, \\
+            servers: [ \\
+            $<$ServerDescription ('ac-unflmlu-shard-00-00.kjjyow6.mongodb.net', 27017) server\_type: Unknown, \\
+            rtt: None, error=NetworkTimeout('ac-unflmlu-shard-00-00.kjjyow6.mongodb.net:27017: timed out \\
+            (configured timeouts: socketTimeoutMS: 20000.0ms, connectTimeoutMS: 20000.0ms)')$>$, \\
+            $<$ServerDescription ('ac-unflmlu-shard-00-01.kjjyow6.mongodb.net', 27017) server\_type: Unknown, \\
+            rtt: None, error=NetworkTimeout('ac-unflmlu-shard-00-01.kjjyow6.mongodb.net:27017: timed out \\
+            (configured timeouts: socketTimeoutMS: 20000.0ms, connectTimeoutMS: 20000.0ms)')$>$, \\
+            $<$ServerDescription ('ac-unflmlu-shard-00-02.kjjyow6.mongodb.net', 27017) server\_type: Unknown, \\
+            rtt: None, error=NetworkTimeout('ac-unflmlu-shard-00-02.kjjyow6.mongodb.net:27017: timed out \\
+            (configured timeouts: socketTimeoutMS: 20000.0ms, connectTimeoutMS: 20000.0ms)')$>$ \\
+            ]$>$ \\
+        \end{monoblock}
+        
+        \textbf{Solution}: don't use the WIFI of NUS
+
+    \subsection{Issue 4: 404 Login API Not Found}
+        \textbf{Problem}: When logging in, the browser console displayed:
+        
+        \begin{monoblock}
+            POST http://127.0.0.1:8000/login/ 404 (Not Found)\\
+            AxiosError: Request failed with status code 404
+        \end{monoblock}
+        
+        \textbf{Cause}: The backend had no \texttt{/login/} endpoint defined, or the frontend API path did not match the FastAPI route.
+        
+        \textbf{Solution:}
+        \begin{enumerate}
+            \item Add a login endpoint in \texttt{main.py}: 
+            
+                \begin{monoblock}
+                    from fastapi import FastAPI, HTTPException\\
+                    from pydantic import BaseModel\\
+                    app = FastAPI()\\
+                    class UserLogin(BaseModel):\\
+                        username: str\\
+                        password: str\\
+                    @app.post("/login/")\\
+                    async def login(user: UserLogin):\\
+                        if user.username == "admin" and user.password == "123456":\\
+                            return {"message": "Login successful"}\\
+                        raise HTTPException(status\_code=401, detail="Invalid credentials")\\
+                \end{monoblock}
+                
+            \item Ensure the frontend API URL is configured in \texttt{frontend/.env}:
+            
+                \begin{monoblock}
+                    REACT\_APP\_API\_URL=http://127.0.0.1:8000
+                \end{monoblock}
+                
+            \item Restart both backend and frontend. 
+        \end{enumerate}
+        
+        \textbf{Verification}: The browser console should show a 200 OK response on login.
+
+    \subsection{Issue 5: 500 Internal Server Error on Task Fetch}
+
+        \textbf{Problem}: Task data could not be retrieved, returning:
+        
+        \begin{monoblock}
+            500 Internal Server Error
+        \end{monoblock}
+        
+        \textbf{Cause}: The MongoDB task collections were misnamed or not initialized properly.
+        
+        \textbf{Solution}: Ensure these constants are correctly defined in \texttt{models.py} or \texttt{database.py}: 
+        
+        \begin{monoblock}
+            FIXED\_TASK\_COLLECTION = "fixed-tasks"\\
+            FLEXIBLE\_TASK\_COLLECTION = "flexible-tasks"
+        \end{monoblock}
+        
+        Restart the backend afterward.
+
+    
+    
+
+
+\end{document}
+%-----------------------
+% End document
+%-----------------------
